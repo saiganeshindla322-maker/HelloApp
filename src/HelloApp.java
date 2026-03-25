@@ -1,9 +1,19 @@
 public class HelloApp {
     public static void main(String[] args) {
-        // Get the name from command-line argument
-        String name = args.length > 0 ? args[0] : "Pranav";
 
-        // Print greeting message
+        String name = "World";
+
+        if (args.length == 0) {
+        } else {
+            StringBuilder nameBuilder = new StringBuilder();
+            for (String arg : args) {
+                nameBuilder.append(arg).append(", ");
+            }
+            if (nameBuilder.length() > 0) {
+                name = nameBuilder.substring(0, nameBuilder.length() - 2);
+            }
+        }
+
         System.out.println("Hello, " + name + "!");
     }
 }
