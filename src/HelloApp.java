@@ -3,15 +3,8 @@ public class HelloApp {
 
         String name = "World";
 
-        if (args.length == 0) {
-        } else {
-            StringBuilder nameBuilder = new StringBuilder();
-            for (String arg : args) {
-                nameBuilder.append(arg).append(", ");
-            }
-            if (nameBuilder.length() > 0) {
-                name = nameBuilder.substring(0, nameBuilder.length() - 2);
-            }
+        if (args.length > 0) {
+            name = String.join(", ", args);
         }
 
         System.out.println("Hello, " + name + "!");
